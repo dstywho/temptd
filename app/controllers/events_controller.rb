@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     @event = Event.last
     
     if @event
-      render @event
+      render action: :show, id: @event.id
     else
       redirect_to action: :new
     end
