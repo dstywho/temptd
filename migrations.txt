@@ -1,0 +1,6 @@
+r g scaffold vote user_id:integer event_id:integer timeslot_id:integer
+r g model event type:string
+r g model timeslot event_id:integer starts_at:datetime ends_at:datetime
+r g model event_type name:string
+r g model event_preferences event_type_id:integer category:string
+r g model user_event_preferences user_id:integer event_preference_id:integer value:string
