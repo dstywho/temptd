@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-sports = EventType.create(name: "Sports")
-
+sports = EventType.find_or_create_by_name("Sports")
+sports = Event.find_or_create_by_event_type_id(sports.id)
 
