@@ -1,4 +1,7 @@
 Temptd::Application.routes.draw do
+
+  resources :events
+
   resources :votes
 
   # The priority is based upon order of creation:
