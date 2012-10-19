@@ -5,6 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-sports = EventType.find_or_create_by_name("Sports")
-sports = Event.find_or_create_by_event_type_id(sports.id)
 
+
+EventType.destroy_all
+Event.destroy_all
+User.destroy_all
+Timeslot.destroy_all
+Vote.destroy_all
+
+sport = EventType.find_or_create_by_name("Sports")
+test_event = Event.find_or_create_by_event_type_id(sport.id)
+test_user = User.create(email: "user@name.com", password: 'password', password_confirmation: 'password', nickname: "The Hammer")
+
+monday = Time.now.beginning_of_week
+
+5.times do |day_index|
+  day = monday + day_index.days
+  2.times do |i|
+    start_time = day + (17 + i * 2).hours 
+    end_time = day + (19 + i * 2).hours 
+
+    Timeslot.create(event_id: test_event.id, starts_at: start_time, ends_at: end_time)
+  end
+end
+
+test_vote = Vote.create(user_id: test_user.id, event_id: test_event.id, timeslot_id: Timeslot.last.id)

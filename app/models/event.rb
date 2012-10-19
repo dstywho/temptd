@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   def calculate_event_details
     calculate_event_time
   end
+  
   def calculate_event_time
     timeslots.all(order: votes).first
   end
