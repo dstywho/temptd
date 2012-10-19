@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019181515) do
+ActiveRecord::Schema.define(:version => 20121019182700) do
 
   create_table "event_preferences", :force => true do |t|
     t.integer  "event_type_id"
@@ -27,10 +27,9 @@ ActiveRecord::Schema.define(:version => 20121019181515) do
   end
 
   create_table "events", :force => true do |t|
-    t.string   "type"
+    t.integer  "event_type_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "event_type_id"
   end
 
   create_table "timeslots", :force => true do |t|
