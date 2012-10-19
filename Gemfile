@@ -35,9 +35,11 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 
 gem "jquery-rails"
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem 'devise'
 gem 'whenever'
+gem 'letters'
+gem 'pry-rails'
