@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Event do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it "should calculate_event_time" do
+    
+  end
+  
+  
 end
+
+

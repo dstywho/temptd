@@ -29,4 +29,6 @@ monday = Time.now.beginning_of_week
   end
 end
 
-test_vote = Vote.create(user_id: test_user.id, event_id: test_event.id, timeslot_id: Timeslot.last.id)
+Vote.create(user_id: test_user.id, event_id: test_event.id, timeslot_id: Timeslot.last.id)
+Vote.create(user_id: 2, event_id: test_event.id, timeslot_id: Timeslot.first.id)
+Vote.create(user_id: 3, event_id: test_event.id, timeslot_id: Timeslot.last.id)
