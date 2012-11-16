@@ -29,19 +29,19 @@ class Event < ActiveRecord::Base
   
   
   
-  5.times do |day_index|
-    day = monday + day_index.days
-    2.times do |i|
-      start_time = day + (17 + i * 2).hours 
-      end_time = day + (19 + i * 2).hours 
-
-      Timeslot.create(event_id: test_event.id, starts_at: start_time, ends_at: end_time)
-    end
-  end
+  # 5.times do |day_index|
+  #   day = monday + day_index.days
+  #   2.times do |i|
+  #     start_time = day + (17 + i * 2).hours 
+  #     end_time = day + (19 + i * 2).hours 
+  # 
+  #     Timeslot.create(event_id: test_event.id, starts_at: start_time, ends_at: end_time)
+  #   end
+  # end
   
   
   def self.start_new_sports_event
-    Event.
+    # Event.
   end
   
   def self.finish_current_sports_event
