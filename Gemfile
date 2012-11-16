@@ -33,11 +33,32 @@ end
 
 group :development, :test do
   gem 'debugger'
+  gem 'guard'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-coffeescript'
+  gem 'guard-livereload'
+  gem 'guard-spork'
+  gem 'spork'
+  gem 'faker'
+  gem "mailcatcher"
+  gem "rspec-rails", "~> 2.0"
+end
+
+group :development do
+  gem "rails-erd"
+  gem 'letters'
+  gem 'pry-rails'
+end
+
+
+group :test do
+  gem "cucumber-rails"
 end
 
 gem "jquery-rails"
-gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem 'devise'
-gem 'whenever'
-gem 'letters'
-gem 'pry-rails'
+gem 'whenever', :require => false
+gem 'will_paginate', '~> 3.0'
+
