@@ -1,3 +1,29 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.timeslots {
+  list-style-type: none;
+  display: block;
+  clear: both;
+}
+
+.timeslots:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.timeslots li {
+  display: block;
+  float:left;
+  margin-right: 8px;
+  height: 80px;
+  width: 80px;
+  border: 3px solid grey;
+  -moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #A9F5F2;
+}
