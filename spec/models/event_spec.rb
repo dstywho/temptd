@@ -11,12 +11,13 @@ describe Event do
     event = Event.new(timeslots: [timeslot1, timeslot2])
   end
   
+
   it "calculates the most popular time" do
     timeslot1.votes = [vote1, vote2]
     timeslot2.vote = vote3
     event.calculate_event_time.should_be timeslot2
-
   end
+
 
 
   it "should calculate_event_time" do
