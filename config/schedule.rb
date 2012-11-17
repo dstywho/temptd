@@ -18,3 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every :wednesday, :at => '10pm' do
+  runner "Event.start_new_sports_event"
+end
+
+every :saturday, :at => '12pm' do
+  runner "Event.finish_current_sports_event"
+end
