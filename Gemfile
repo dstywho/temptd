@@ -44,6 +44,7 @@ group :development, :test do
   gem 'faker'
   gem "mailcatcher"
   gem "rspec-rails", "~> 2.0"
+  gem 'factory_girl_rails'  
 end
 
 group :development do
