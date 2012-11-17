@@ -3,9 +3,9 @@ class Event < ActiveRecord::Base
   has_many        :timeslots
   has_many        :votes
   belongs_to      :event_type
-  
+
   validates_presence_of :event_type
-  
+
   def to_s
     "#{event_type}"
   end
@@ -17,8 +17,8 @@ class Event < ActiveRecord::Base
   def calculate_event_details
     calculate_event_time
   end
-  
+
   def calculate_event_time
-    timeslots.all(order: votes).first
+    timeslots.all(order: timeslots.votes.length).first
   end
 end
