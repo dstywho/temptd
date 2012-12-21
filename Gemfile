@@ -44,7 +44,7 @@ group :development, :test do
   gem 'faker'
   gem "mailcatcher"
   gem "rspec-rails", "~> 2.0"
-  gem 'factory_girl_rails'  
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -62,4 +62,5 @@ gem "jquery-rails"
 gem 'devise'
 gem 'whenever', :require => false
 gem 'will_paginate', '~> 3.0'
-
+gem 'omniauth'
+gem 'omniauth-github'
