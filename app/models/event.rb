@@ -1,11 +1,14 @@
 class Event < ActiveRecord::Base
-  attr_accessible :type
-  has_many        :votes
-  belongs_to      :event_type
+  belongs_to :event_type
+  
+  has_many :votes
   has_many :timeslots, dependent: :destroy
   accepts_nested_attributes_for :timeslots, reject_if: -> attr { attr['started_at'].blank? }, allow_destroy: true
+  
 
   validates_presence_of :event_type
+  
+  attr_accessible :timeslots
 
   def to_s
     "#{event_type}"
@@ -18,14 +21,15 @@ class Event < ActiveRecord::Base
   def calculate_event_details
     calculate_event_time
   end
+  
+  def winning_timeslot
+    @winning_timeslot ||= timeslots.sort_by{|a| a.votes.size }.last
+    return @winning_timeslot
+  end
 
+  # Return time of the most popular Timeslot
   def calculate_event_time
-    timeslot = votes.select("votes.*, count(*) AS count").
-                     group(:timeslot_id).
-                     order("count DESC").
-                     limit(1).try(:timeslot)
-    
-    timeslot ? [timeslot.starts_at, timeslot.end_at] : nil
+    return [winning_timeslot.starts_at, winning_timeslot.ends_at] if winning_timeslot
   end
   
   
