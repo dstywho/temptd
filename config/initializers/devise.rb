@@ -16,7 +16,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   
   require "omniauth-github"
-  config.omniauth :github, "APP_ID", "APP_SECRET"
+  config.omniauth :github, CLIENT_ID, CLIENT_SECRET
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

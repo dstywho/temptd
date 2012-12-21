@@ -1,5 +1,10 @@
 Temptd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  
+  CLIENT_ID="4ed181654f694955a301"
+  CLIENT_SECRET="7b251ce80b9f09c93423d615ae0ffff4b7523b4f"
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
