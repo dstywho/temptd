@@ -64,3 +64,5 @@ gem 'whenever', :require => false
 gem 'will_paginate', '~> 3.0'
 gem 'omniauth'
 gem 'omniauth-github'
+
+gem 'activerecord-postgresql-adapter'
