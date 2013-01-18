@@ -7,7 +7,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <p><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p>
+    <% if current_user %>
+      <strong><%= current_user %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path %> |
+      <%= link_to "Logout", destroy_user_session_path %>
+    <% else %>
+      <p><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
