@@ -18,5 +18,8 @@ cron job weds night
 
 cron job tallies votes for each of the current events.
 
+Install OpenSSL!
+http://stackoverflow.com/questions/10775640/omniauth-facebook-error-faradayerrorconnectionfailed
+
 
 
