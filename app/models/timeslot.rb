@@ -7,8 +7,8 @@ class Timeslot < ActiveRecord::Base
   validates_presence_of :event_id, :starts_at
   
   def to_s
-    range = starts_at.strftime("%A, %l%P")
-    range << " - #{ends_at.strftime("%A, %l%P")}" if ends_at
+    range = starts_at.to_s
+    range << " - #{ends_at}" if ends_at
     return range
   end
 end

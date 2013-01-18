@@ -7,8 +7,4 @@ module ApplicationHelper
       "None"
     end
   end
-  
-  def display_datetime(datetime)
-    datetime.strftime("%A, %l%P")
-  end
 end
