@@ -17,17 +17,25 @@ class User < ActiveRecord::Base
       end
     end
   end
-
-  def self.find_for_github_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    unless user
-      user = User.create(nickname:auth.extra.raw_info.name,
-        provider:auth.provider,
-        uid:auth.uid,
-        email:auth.info.email,
-        password:Devise.friendly_token[0,20]
-      )
+  
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid      = auth.uid
+      user.username = auth.info.nickname
     end
-    user
   end
+
+  # def self.find_for_github_oauth(auth, signed_in_resource=nil)
+  #   user = User.where(:provider => auth.provider, :uid => auth.uid).first
+  #   unless user
+  #     user = User.create(nickname:auth.extra.raw_info.name,
+  #       provider:auth.provider,
+  #       uid:auth.uid,
+  #       email:auth.info.email,
+  #       password:Devise.friendly_token[0,20]
+  #     )
+  #   end
+  #   user
+  # end
 end
