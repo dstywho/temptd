@@ -4,10 +4,9 @@ class Event < ActiveRecord::Base
   has_many :votes
   has_many :timeslots, dependent: :destroy
   accepts_nested_attributes_for :timeslots, reject_if: -> attr { attr['started_at'].blank? }, allow_destroy: true
-  
 
   validates_presence_of :event_type
-  
+
   attr_accessible :timeslots
 
   def to_s
