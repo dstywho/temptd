@@ -12,7 +12,9 @@ Temptd::Application.routes.draw do
                      controllers: {omniauth_callbacks: "omniauth_callbacks"}
   
   resources :events
-  resources :votes
+  resources :timeslots do
+    resources :votes
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

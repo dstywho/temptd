@@ -1,13 +1,28 @@
 <h1><%= @event %></h1>
 <h2><%= @event.starts_at %></h2>
 
+<% if current_user.blank? %>
+  <h3>Login to rock the vote!</h3>
+<% end %>
+
 <% if @event.timeslots.empty? %>
   No timeslots!
 <% else %>
   <ul class="timeslots">
     <% @event.timeslots.each do |timeslot| %>
       <%# TODO: Determine li class based on if current user has voted for that day  %>
-      <li><%= timeslot %></li>
+      <li>
+        <% if current_user %>
+          <% if vote = current_user.votes.find_by_timeslot_id(timeslot.id) %>
+            <%= timeslot %>
+            <%= link_to "[Unvote]", timeslot_vote_path(timeslot, vote), confirm: "You sure you want to unvote that?", method: 'delete' %>
+          <% else %>
+            <%= link_to timeslot, {controller: :votes, timeslot_id: timeslot.id}, method: 'post' %>
+          <% end %>
+        <% else %>
+          <%= timeslot %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 <% end %>
