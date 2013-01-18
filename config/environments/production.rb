@@ -1,8 +1,8 @@
 Temptd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  CLIENT_ID="4ed181654f694955a301"
-  CLIENT_SECRET="7b251ce80b9f09c93423d615ae0ffff4b7523b4f"
+  CLIENT_ID="1b4178c96cf318336c8a"
+  CLIENT_SECRET="423652db2ef05aec2c6bbede4b05c95660a50780"
   # Code is not reloaded between requests
   config.cache_classes = true
 

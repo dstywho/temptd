@@ -66,4 +66,5 @@ gem 'will_paginate', '~> 3.0'
 gem 'omniauth'
 gem 'omniauth-github'
 
+gem 'thin'
 gem 'activerecord-postgresql-adapter'
