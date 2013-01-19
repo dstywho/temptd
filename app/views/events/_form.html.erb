@@ -12,6 +12,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= content_tag :button, :type => :submit, :class => "btn" do %>
+       <i class="icon-plus-sign-alt"></i>
+       Create Event
+    <% end %>
+
 <% end %>

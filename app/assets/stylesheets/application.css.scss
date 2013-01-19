@@ -9,9 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ //= require 'bootstrap_and_overrides'
  */
-//= require 'events'
+ 
+ @import "font-awesome";
+ @import "custom_application";
 
 .content {
   background-color: #eee;
@@ -24,3 +26,4 @@
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
+

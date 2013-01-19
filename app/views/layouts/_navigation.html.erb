@@ -5,7 +5,13 @@
       <button class="btn"><%= link_to current_user, edit_user_registration_path %></button>
       <button class="btn"><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></button>
   <% else %>
-      <button class="btn"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></button>
-      <button class="btn"><%= link_to('Sign up', new_user_registration_path) %></button>
+      <button class="btn">
+        <i class="icon-github-alt"></i>
+        <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+      </button>
+      <button class="btn">
+        <i class="icon-plus-sign-alt"></i>
+        <%= link_to('Sign up', new_user_registration_path) %>
+      </button>
   <% end %>
 </nav>
